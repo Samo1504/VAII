@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Prehľad a vyhľadávanie archívnych objektov v aplikácii Archívna evidencia."
+    >
+    <title>Zoznam objektov | Archívna evidencia</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Zakladne rozlozenie aplikacie: hlavicka a navigacia -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Archívna evidencia – úvod">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span>Archívna evidencia</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Hlavná navigácia">
+          <a class="nav-link is-current" href="index.html" aria-current="page">Zoznam objektov</a>
+          <span class="nav-link">Správa kategórií</span>
+          <span class="nav-link">Správa používateľov</span>
+        </nav>
+
+        <button class="sign-in-link" type="button">Prihlásiť sa</button>
+      </div>
+    </header>
+
+    <!-- Netrivialna stranka aplikacie: vyhladavanie a zoznam archivnych objektov -->
+    <main class="page-content" id="zoznam-objektov">
+      <section class="page-heading" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Digitálny archív</p>
+          <h1 id="page-title">Zoznam objektov</h1>
+          <p class="page-intro">Vyhľadávajte, filtrujte a prezerajte archivované materiály.</p>
+        </div>
+        <div class="heading-actions">
+          <button class="button button-secondary" type="button">Exportovať do CSV</button>
+          <button class="button button-primary" type="button">
+            <span aria-hidden="true">+</span> Pridať objekt
+          </button>
+        </div>
+      </section>
+
+      <section class="filter-panel" aria-labelledby="filter-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="filter-title">Vyhľadávanie a filtre</h2>
+            <p>Zúžte zoznam podľa názvu, kategórie, inštitúcie alebo dátumu.</p>
+          </div>
+          <span class="filter-icon" aria-hidden="true">⌕</span>
+        </div>
+
+        <form class="filter-form">
+          <div class="field field-search">
+            <label for="search">Názov</label>
+            <input id="search" name="search" type="search" placeholder="Hľadať podľa názvu…">
+          </div>
+          <div class="field">
+            <label for="category">Kategória</label>
+            <select id="category" name="category">
+              <option value="">Všetky kategórie</option>
+              <option>Dokumenty</option>
+              <option>Fotografie</option>
+              <option>Kroniky</option>
+              <option>Korešpondencia</option>
+              <option>Mapy</option>
+              <option>Plány</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="institution">Inštitúcia</label>
+            <select id="institution" name="institution">
+              <option value="">Všetky inštitúcie</option>
+              <option>Štátny archív Žilina</option>
+              <option>Mestské múzeum</option>
+              <option>Obecný úrad Terchová</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="status">Stav</label>
+            <select id="status" name="status">
+              <option value="">Všetky stavy</option>
+              <option>Digitalizované</option>
+              <option>Uložené</option>
+            </select>
+          </div>
+          <div class="field field-date">
+            <label for="date-from">Dátum od</label>
+            <input id="date-from" name="date-from" type="date">
+          </div>
+          <div class="field field-date">
+            <label for="date-to">Dátum do</label>
+            <input id="date-to" name="date-to" type="date">
+          </div>
+          <div class="filter-actions">
+            <button class="button button-primary" type="button">Filtrovať</button>
+            <button class="button button-quiet" type="reset">Zrušiť filtre</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-panel" aria-labelledby="results-title">
+        <div class="results-heading">
+          <div>
+            <h2 id="results-title">Archívne záznamy</h2>
+            <p>Nájdených objektov: <strong>24</strong></p>
+          </div>
+          <span class="page-count">Zobrazených 6 z 24</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="records-table">
+            <thead>
+              <tr>
+                <th scope="col"><span class="visually-hidden">Náhľad</span></th>
+                <th scope="col">Názov</th>
+                <th scope="col">Kategória</th>
+                <th scope="col">Inštitúcia</th>
+                <th scope="col">Dátum</th>
+                <th scope="col">Stav</th>
+                <th scope="col"><span class="visually-hidden">Akcie</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="preview-cell">
+                  <span class="record-preview preview-map" aria-hidden="true"><span>MAPA</span></span>
+                </td>
+                <th scope="row" data-label="Názov">Mapa Žilinského kraja 1890</th>
+                <td data-label="Kategória">Mapy</td>
+                <td data-label="Inštitúcia">Štátny archív Žilina</td>
+                <td data-label="Dátum">1890</td>
+                <td data-label="Stav"><span class="status status-digitized">Digitalizované</span></td>
+                <td data-label="Akcie"><button class="detail-link" type="button">Detail <span aria-hidden="true">→</span></button></td>
+              </tr>
+              <tr>
+                <td class="preview-cell">
+                  <span class="record-preview preview-document" aria-hidden="true"><span>LIST</span></span>
+                </td>
+                <th scope="row" data-label="Názov">Krstný list J. Kováča</th>
+                <td data-label="Kategória">Dokumenty</td>
+                <td data-label="Inštitúcia">Farský úrad</td>
+                <td data-label="Dátum">1923</td>
+                <td data-label="Stav"><span class="status status-stored">Uložené</span></td>
+                <td data-label="Akcie"><button class="detail-link" type="button">Detail <span aria-hidden="true">→</span></button></td>
+              </tr>
+              <tr>
+                <td class="preview-cell">
+                  <span class="record-preview preview-photo" aria-hidden="true"><span>FOTO</span></span>
+                </td>
+                <th scope="row" data-label="Názov">Fotografia námestia</th>
+                <td data-label="Kategória">Fotografie</td>
+                <td data-label="Inštitúcia">Mestské múzeum</td>
+                <td data-label="Dátum">1955</td>
+                <td data-label="Stav"><span class="status status-digitized">Digitalizované</span></td>
+                <td data-label="Akcie"><button class="detail-link" type="button">Detail <span aria-hidden="true">→</span></button></td>
+              </tr>
+              <tr>
+                <td class="preview-cell">
+                  <span class="record-preview preview-chronicle" aria-hidden="true"><span>KRONIKA</span></span>
+                </td>
+                <th scope="row" data-label="Názov">Kronika obce Terchová</th>
+                <td data-label="Kategória">Kroniky</td>
+                <td data-label="Inštitúcia">Obecný úrad Terchová</td>
+                <td data-label="Dátum">1932</td>
+                <td data-label="Stav"><span class="status status-stored">Uložené</span></td>
+                <td data-label="Akcie"><button class="detail-link" type="button">Detail <span aria-hidden="true">→</span></button></td>
+              </tr>
+              <tr>
+                <td class="preview-cell">
+                  <span class="record-preview preview-plan" aria-hidden="true"><span>PLÁN</span></span>
+                </td>
+                <th scope="row" data-label="Názov">Plán železničnej stanice</th>
+                <td data-label="Kategória">Plány</td>
+                <td data-label="Inštitúcia">Štátny archív Žilina</td>
+                <td data-label="Dátum">1908</td>
+                <td data-label="Stav"><span class="status status-digitized">Digitalizované</span></td>
+                <td data-label="Akcie"><button class="detail-link" type="button">Detail <span aria-hidden="true">→</span></button></td>
+              </tr>
+              <tr>
+                <td class="preview-cell">
+                  <span class="record-preview preview-letter" aria-hidden="true"><span>LIST</span></span>
+                </td>
+                <th scope="row" data-label="Názov">List richtára mestu</th>
+                <td data-label="Kategória">Korešpondencia</td>
+                <td data-label="Inštitúcia">Mestský archív</td>
+                <td data-label="Dátum">1876</td>
+                <td data-label="Stav"><span class="status status-stored">Uložené</span></td>
+                <td data-label="Akcie"><button class="detail-link" type="button">Detail <span aria-hidden="true">→</span></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <nav class="pagination" aria-label="Stránkovanie zoznamu objektov">
+          <button class="pagination-button pagination-previous" type="button" disabled>
+            <span aria-hidden="true">←</span> Predchádzajúca
+          </button>
+          <div class="page-numbers" aria-label="Strana 1 z 5">
+            <button class="page-number is-active" type="button" aria-current="page">1</button>
+            <button class="page-number" type="button">2</button>
+            <button class="page-number" type="button">3</button>
+            <span class="page-ellipsis" aria-hidden="true">…</span>
+            <button class="page-number" type="button">5</button>
+          </div>
+          <button class="pagination-button" type="button">
+            Nasledujúca <span aria-hidden="true">→</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+
+    <!-- Pokracovanie zakladneho rozlozenia aplikacie: pätička -->
+    <footer class="site-footer">
+      <p>Archívna evidencia <span aria-hidden="true">·</span> Prehľad historických materiálov</p>
+    </footer>
+  </body>
+</html>
