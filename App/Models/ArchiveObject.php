@@ -19,6 +19,7 @@ class ArchiveObject extends Model
     {
         return $this->id;
     }
+
     public function getName(): ?string
     {
         return $this->name;

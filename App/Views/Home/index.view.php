@@ -1,7 +1,6 @@
 <?php
 
-/** @var \App\Models\ArchiveObject[] $archiveObject */
-/** @var int $totalCount */
+/** @var \App\Models\ArchiveObject[] $archiveObjects */
 /** @var \Framework\Support\LinkGenerator $link */
 ?>
 <main class="page-content" id="zoznam-objektov">
@@ -81,9 +80,8 @@
         <div class="results-heading">
             <div>
                 <h2 id="results-title">Archívne záznamy</h2>
-                <p>Nájdených objektov: <strong><?= $totalCount ?></strong></p>
+                <p>Nájdených objektov: <strong><?= count($archiveObjects) ?></strong></p>
             </div>
-            <span class="page-count">Zobrazených <?= count($archiveObject) ?> z <?= $totalCount ?></span>
         </div>
 
         <div class="table-wrap">
@@ -100,7 +98,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($archiveObject as $object) {
+                    <?php foreach ($archiveObjects as $object) {
                         $status = $object->getStav();
                         $statusLabel = match ($status) {
                             'digitized', 'Digitalizované' => 'Digitalizované',
@@ -138,7 +136,7 @@
                             </td>
                         </tr>
                     <?php } ?>
-                    <?php if ($archiveObject === []) { ?>
+                    <?php if ($archiveObjects === []) { ?>
                         <tr>
                             <td colspan="7">Zatiaľ nie sú evidované žiadne archívne objekty.</td>
                         </tr>

@@ -40,9 +40,10 @@ class HomeController extends BaseController
      */
     public function index(Request $request): Response
     {
+        $archiveObjects = ArchiveObject::getAll();
+
         return $this->html([
-            'archiveObject' => ArchiveObject::getAll(),
-            'totalCount' => ArchiveObject::getCount(),
+            'archiveObjects' => $archiveObjects,
         ]);
     }
 
